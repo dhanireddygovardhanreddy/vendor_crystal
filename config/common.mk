@@ -81,6 +81,10 @@ PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
 PRODUCT_COPY_FILES += \
     vendor/crystal/prebuilt/common/etc/sensitive_pn.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sensitive_pn.xml
 
+# Power whitelist
+PRODUCT_COPY_FILES += \
+    vendor/crystal/config/permissions/crystal-power-whitelist.xml:system/etc/sysconfig/crystal-power-whitelist.xml
+
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
 
