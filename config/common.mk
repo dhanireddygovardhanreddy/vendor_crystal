@@ -100,6 +100,8 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE += vendor/crystal/config/device_framework_matrix.xml
+
 ifeq ($(CRYSTAL_PURITY),GAPPS)
     $(call inherit-product, vendor/gapps/config.mk)
 endif
