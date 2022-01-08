@@ -118,5 +118,12 @@ include vendor/crystal/config/packages.mk
 # Props
 include vendor/crystal/config/props.mk
 
+
 # Sounds
 include vendor/crystal/config/sounds.mk
+
+
+# Themes
+$(call inherit-product, vendor/crystal/config/themes.mk)
+-include $(WORKSPACE)/build_env/image-auto-bits.mk
+
