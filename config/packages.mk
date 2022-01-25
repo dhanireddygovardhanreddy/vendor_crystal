@@ -26,7 +26,7 @@ PRODUCT_PACKAGES += \
     Stk \
     stats \
     ThemePicker \
-    ArrowThemesStub
+    CrystalThemesStub
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
