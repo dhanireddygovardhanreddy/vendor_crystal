@@ -84,6 +84,10 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
+ifeq ($(CRYSTAL_PURITY),GAPPS)
+    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
+endif
+
 # Bootanimation
 include vendor/crystal/config/bootanimation.mk
 
