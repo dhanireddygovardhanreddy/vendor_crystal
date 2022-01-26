@@ -98,6 +98,10 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.biometrics.face.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/permissions/android.hardware.biometrics.face.xml
 endif
 
+ifeq ($(CRYSTAL_PURITY),GAPPS)
+    $(call inherit-product, vendor/gapps/common/common-vendor.mk)
+endif
+
 # Bootanimation
 include vendor/crystal/config/bootanimation.mk
 
