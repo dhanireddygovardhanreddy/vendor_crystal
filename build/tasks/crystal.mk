@@ -16,8 +16,7 @@
 # -----------------------------------------------------------------
 # Crystal OTA update package
 
-CRYSTAL_TARGET_PACKAGE := $(CRYSTAL_ZIP_NAME)
-
+CRYSTAL_TARGET_PACKAGE := $(PRODUCT_OUT)/CrystalOS-$(CRYSTAL_VERSION)-$(CRYSTAL_VERSION_NAME)-$(CRYSTAL_BUILD_TYPE)-$(CRYSTAL_DEVICE)-$(CRYSTAL_PURITY)-$(CRYSTAL_BUILD_DATE).zip
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
 .PHONY: crystal
