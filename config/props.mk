@@ -30,7 +30,7 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.setupwizard.mode=OPTIONAL
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-    persist.sys.disable_rescue=true
+    persist.sys.disable_rescue=false
 
 # Blur
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
