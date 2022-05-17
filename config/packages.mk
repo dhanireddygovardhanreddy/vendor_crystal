@@ -31,7 +31,8 @@ PRODUCT_PACKAGES += \
 
 # SystemUI plugins
 PRODUCT_PACKAGES += \
-    QuickAccessWallet
+    QuickAccessWallet \
+    GamingMode
 
 # Charger mode images
 ifeq ($(TARGET_INCLUDE_PIXEL_CHARGER),true)
