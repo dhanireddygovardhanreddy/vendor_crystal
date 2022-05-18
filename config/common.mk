@@ -83,7 +83,11 @@ PRODUCT_COPY_FILES += \
 
 # Power whitelist
 PRODUCT_COPY_FILES += \
-    vendor/crystal/config/permissions/crystal-power-whitelist.xml:system/etc/sysconfig/crystal-power-whitelist.xml
+    vendor/crystal/config/permissions/crystal-power-whitelist.xml:$(TARGET_COPY_OUT_SYSTEM)/etc/sysconfig/crystal-power-whitelist.xml
+
+# Priv-app permission whitelist
+PRODUCT_COPY_FILES += \
+	vendor/crystal/config/permissions/privapp-permissions-crystal-system_ext.xml:$(TARGET_COPY_OUT_SYSTEM_EXT)/etc/permissions/privapp-permissions-crystal-system_ext.xml
 
 # Do not include art debug targets
 PRODUCT_ART_TARGET_INCLUDE_DEBUG_BUILD := false
