@@ -19,12 +19,12 @@
 
 CRYSTAL_TARGET_PACKAGE := $(PRODUCT_OUT)/CrystalOS-$(CRYSTAL_VERSION)-$(CRYSTAL_VERSION_NAME)-$(CRYSTAL_BUILD_TYPE)-$(CRYSTAL_DEVICE)-$(CRYSTAL_BUILD_DATE).zip
 
-MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
+SHA256 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/sha256sum
 
 .PHONY: crystal
 crystal: $(INTERNAL_OTA_PACKAGE_TARGET)
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CRYSTAL_TARGET_PACKAGE)
-	$(hide) $(MD5) $(CRYSTAL_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CRYSTAL_TARGET_PACKAGE).md5sum
+	$(hide) $(SHA256) $(CRYSTAL_TARGET_PACKAGE) | sed "s|$(PRODUCT_OUT)/||" > $(CRYSTAL_TARGET_PACKAGE).sha256sum
 	@echo "Package Complete: $(CRYSTAL_TARGET_PACKAGE)" >&2
 	echo "";
 	cat vendor/crystal/build/ASCII;
