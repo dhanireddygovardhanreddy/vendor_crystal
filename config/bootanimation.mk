@@ -1,7 +1,10 @@
 # Boot Animation
 
+# 1440p
+ifeq ($(TARGET_BOOT_ANIMATION_RES),1440)
+PRODUCT_COPY_FILES += vendor/crystal/prebuilt/common/bootanimation/1440.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 # 1080p
-ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
+else ifeq ($(TARGET_BOOT_ANIMATION_RES),1080)
 PRODUCT_COPY_FILES += vendor/crystal/prebuilt/common/bootanimation/1080.zip:$(TARGET_COPY_OUT_PRODUCT)/media/bootanimation.zip
 # 720p
 else ifeq ($(TARGET_BOOT_ANIMATION_RES),720)
