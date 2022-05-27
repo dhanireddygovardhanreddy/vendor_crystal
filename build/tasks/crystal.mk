@@ -1,5 +1,6 @@
 # Copyright (C) 2017 Unlegacy-Android
 # Copyright (C) 2017 The LineageOS Project
+# Copyright (C) 2021-2022 CrystalOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -16,7 +17,7 @@
 # -----------------------------------------------------------------
 # Crystal OTA update package
 
-CRYSTAL_TARGET_PACKAGE := $(CRYSTAL_ZIP_NAME)
+CRYSTAL_TARGET_PACKAGE := $(PRODUCT_OUT)/CrystalOS-$(CRYSTAL_VERSION)-$(CRYSTAL_VERSION_NAME)-$(CRYSTAL_BUILD_TYPE)-$(CRYSTAL_DEVICE)-$(CRYSTAL_BUILD_DATE).zip
 
 MD5 := prebuilts/build-tools/path/$(HOST_PREBUILT_TAG)/md5sum
 
