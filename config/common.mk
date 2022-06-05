@@ -17,9 +17,6 @@ include vendor/arrow/config/version.mk
 PRODUCT_PACKAGE_OVERLAYS += \
     vendor/arrow/overlay/common
 
-PRODUCT_PACKAGE_OVERLAYS += \
-    vendor/arrow/overlay/themes/ArrowIcons
-
 PRODUCT_ENFORCE_RRO_EXCLUDED_OVERLAYS += \
     vendor/arrow/overlay/common
 
