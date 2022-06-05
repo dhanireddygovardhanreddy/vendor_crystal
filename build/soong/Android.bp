@@ -376,19 +376,19 @@ soong_config_module_type {
 }
 
 soong_config_module_type {
-    name: "camera_boottime_timestamp",
+    name: "needs_camera_boottime",
     module_type: "cc_defaults",
     config_namespace: "crystalQcomVars",
-    bool_variables: ["needs_camera_boottime_timestamp"],
+    bool_variables: ["needs_camera_boottime"],
     properties: [
         "cflags",
     ],
 }
 
-camera_boottime_timestamp {
-    name: "needs_camera_boottime",
+needs_camera_boottime {
+    name: "needs_camera_boottime_defaults",
     soong_config_variables: {
-        needs_camera_boottime_timestamp: {
+        needs_camera_boottime: {
             cflags: ["-DTARGET_CAMERA_BOOTTIME_TIMESTAMP"],
         },
     },
