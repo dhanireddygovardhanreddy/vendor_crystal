@@ -13,58 +13,58 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-ARROW_MOD_VERSION = v12.1
-ARROW_BUILD_TYPE := UNOFFICIAL
-ARROW_BUILD_ZIP_TYPE := VANILLA
+CRYSTAL_MOD_VERSION = v12.1
+CRYSTAL_BUILD_TYPE := UNOFFICIAL
+CRYSTAL_BUILD_ZIP_TYPE := VANILLA
 
-ifeq ($(ARROW_BETA),true)
-    ARROW_BUILD_TYPE := BETA
+ifeq ($(CRYSTAL_BETA),true)
+    CRYSTAL_BUILD_TYPE := BETA
 endif
 
-ifeq ($(ARROW_GAPPS), true)
+ifeq ($(CRYSTAL_GAPPS), true)
     $(call inherit-product, vendor/gapps/common/common-vendor.mk)
-    ARROW_BUILD_ZIP_TYPE := GAPPS
+    CRYSTAL_BUILD_ZIP_TYPE := GAPPS
 endif
 
 CURRENT_DEVICE=$(shell echo "$(TARGET_PRODUCT)" | cut -d'_' -f 2,3)
 
-ifeq ($(ARROW_OFFICIAL), true)
-   LIST = $(shell cat infrastructure/devices/arrow.devices | awk '$$1 != "#" { print $$2 }')
+ifeq ($(CRYSTAL_OFFICIAL), true)
+   LIST = $(shell cat infrastructure/devices/crystal.devices | awk '$$1 != "#" { print $$2 }')
     ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
       IS_OFFICIAL=true
-      ARROW_BUILD_TYPE := OFFICIAL
+      CRYSTAL_BUILD_TYPE := OFFICIAL
 
 PRODUCT_PACKAGES += \
     Updater
 
     endif
     ifneq ($(IS_OFFICIAL), true)
-       ARROW_BUILD_TYPE := UNOFFICIAL
+       CRYSTAL_BUILD_TYPE := UNOFFICIAL
        $(error Device is not official "$(CURRENT_DEVICE)")
     endif
 endif
 
-ifeq ($(ARROW_COMMUNITY), true)
-   LIST = $(shell cat infrastructure/devices/arrow-community.devices | awk '$$1 != "#" { print $$2 }')
+ifeq ($(CRYSTAL_COMMUNITY), true)
+   LIST = $(shell cat infrastructure/devices/crystal-community.devices | awk '$$1 != "#" { print $$2 }')
     ifeq ($(filter $(CURRENT_DEVICE), $(LIST)), $(CURRENT_DEVICE))
       IS_COMMUNITY=true
-      ARROW_BUILD_TYPE := COMMUNITY
+      CRYSTAL_BUILD_TYPE := COMMUNITY
     endif
     ifneq ($(IS_COMMUNITY), true)
-       ARROW_BUILD_TYPE := UNOFFICIAL
+       CRYSTAL_BUILD_TYPE := UNOFFICIAL
        $(error This isn't a community device "$(CURRENT_DEVICE)")
     endif
 endif
 
-ARROW_VERSION := Arrow-$(ARROW_MOD_VERSION)-$(CURRENT_DEVICE)-$(ARROW_BUILD_TYPE)-$(shell date -u +%Y%m%d)-$(ARROW_BUILD_ZIP_TYPE)
+CRYSTAL_VERSION := Crystal-$(CRYSTAL_MOD_VERSION)-$(CURRENT_DEVICE)-$(CRYSTAL_BUILD_TYPE)-$(shell date -u +%Y%m%d)-$(CRYSTAL_BUILD_ZIP_TYPE)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.arrow.version=$(ARROW_VERSION) \
-  ro.arrow.releasetype=$(ARROW_BUILD_TYPE) \
-  ro.arrow.ziptype=$(ARROW_BUILD_ZIP_TYPE) \
-  ro.modversion=$(ARROW_MOD_VERSION)
+  ro.crystal.version=$(CRYSTAL_VERSION) \
+  ro.crystal.releasetype=$(CRYSTAL_BUILD_TYPE) \
+  ro.crystal.ziptype=$(CRYSTAL_BUILD_ZIP_TYPE) \
+  ro.modversion=$(CRYSTAL_MOD_VERSION)
 
-ARROW_DISPLAY_VERSION := Arrow-$(ARROW_MOD_VERSION)-$(ARROW_BUILD_TYPE)
+CRYSTAL_DISPLAY_VERSION := Crystal-$(CRYSTAL_MOD_VERSION)-$(CRYSTAL_BUILD_TYPE)
 
 PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.arrow.display.version=$(ARROW_DISPLAY_VERSION)
+  ro.crystal.display.version=$(CRYSTAL_DISPLAY_VERSION)

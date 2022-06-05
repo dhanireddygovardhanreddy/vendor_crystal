@@ -6,12 +6,12 @@ import (
 	"android/soong/android"
 )
 
-func arrowExpandVariables(ctx android.ModuleContext, in string) string {
-	arrowVars := ctx.Config().VendorConfig("arrowVarsPlugin")
+func crystalExpandVariables(ctx android.ModuleContext, in string) string {
+	crystalVars := ctx.Config().VendorConfig("crystalVarsPlugin")
 
 	out, err := android.Expand(in, func(name string) (string, error) {
-		if arrowVars.IsSet(name) {
-			return arrowVars.String(name), nil
+		if crystalVars.IsSet(name) {
+			return crystalVars.String(name), nil
 		}
 		// This variable is not for us, restore what the original
 		// variable string will have looked like for an Expand

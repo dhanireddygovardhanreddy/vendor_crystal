@@ -26,7 +26,7 @@ PRODUCT_PACKAGES += \
     Stk \
     stats \
     ThemePicker \
-    ArrowThemesStub \
+    CrystalThemesStub \
     GameSpace
 
 # SystemUI plugins
