@@ -100,8 +100,10 @@ PRODUCT_MINIMIZE_JAVA_DEBUG_INFO := true
 # Disable vendor restrictions
 PRODUCT_RESTRICT_VENDOR_FILES := false
 
-ifeq ($(CRYSTAL_PURITY),GAPPS)
-    $(call inherit-product, vendor/gapps/config.mk)
+ifeq ($(CRYSTAL_PURITY),FGAPPS)
+    $(call inherit-product, vendor/gapps/gapps_full.mk)
+else ifeq ($(CRYSTAL_PURITY),MGAPPS)
+	$(call inherit-product, vendor/gapps/gapps_mini.mk)
 endif
 
 # Bootanimation
